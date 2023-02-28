@@ -36,7 +36,6 @@ public interface History {
 
         line = line.concat("    [" + dateTimeFormatter.format(now) +"]");
 
-
         writer.println(line);
         writer.flush();
         writer.close();

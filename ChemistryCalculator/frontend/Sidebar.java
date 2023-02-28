@@ -91,8 +91,14 @@ public class Sidebar extends JPanel {
         menuHolder.setBackground(new Color(54, 33, 89));
         menuHolderScrollPane.setViewportView(menuHolder);
 
-        setFontPropertyOfLabel(logoPanel,new Font("Segoe UI", 1, 24),new Color(221, 221, 221),"ChemCal");
-        setFontPropertyOfLabel(developer_sign_label,new Font("Segoe UI", 1, 12),new Color(221, 221, 221),"Developed by - HumbleFooL");
+        Font logoPanelFont=new Font("Segoe UI", 1, 24);
+        Color logoPanelColor=new Color(221, 221, 221);
+
+        Font developer_sign_labelFont=new Font("Segoe UI", 1, 12);
+        Color developer_sign_labelColor=new Color(221, 221, 221);
+
+        setFontPropertyOfLabel(logoPanel,logoPanelFont,logoPanelColor,"ChemCal");
+        setFontPropertyOfLabel(developer_sign_label,developer_sign_labelFont,developer_sign_labelColor,"Developed by - HumbleFooL");
 
     }
 
