@@ -50,33 +50,36 @@ public class TitrationPanel extends JPanel {
         setComponentLayout();
     }
 
+
+    private void setFontPropertyToTextFieldLabel(JLabel label, String text){
+        label.setFont(SEGOE_UI);
+        label.setForeground(MAIN_COLOR);
+        label.setText(text);
+    }
+
+
+    private void setButtonProperty(JButton btn,String text){
+        btn.setBackground(MAIN_COLOR);
+        btn.setFont(SEGOE_UI);
+        btn.setForeground(GRAY);
+        btn.setText(text);
+        btn.setAutoscrolls(true);
+        btn.setCursor(new Cursor(Cursor.HAND_CURSOR));
+
+
+    }
+
+
     private void initComponent() {
-        labelForAcidMolarityTextfield.setFont(SEGOE_UI);
-        labelForAcidMolarityTextfield.setForeground(MAIN_COLOR);
-        labelForAcidMolarityTextfield.setText("Molarity of Acid :");
 
-        labelForAcidVolumeTextfield.setFont(SEGOE_UI);
-        labelForAcidVolumeTextfield.setForeground(MAIN_COLOR);
-        labelForAcidVolumeTextfield.setText("Volume of Acid :");
+        setFontPropertyToTextFieldLabel(labelForAcidMolarityTextfield,"Molarity of Acid :");
+        setFontPropertyToTextFieldLabel(labelForAcidVolumeTextfield,"Volume of Acid :");
+        setFontPropertyToTextFieldLabel(labelForBaseVolumeTextfield,"Volume of Base :");
 
-        labelForBaseVolumeTextfield.setFont(SEGOE_UI);
-        labelForBaseVolumeTextfield.setForeground(MAIN_COLOR);
-        labelForBaseVolumeTextfield.setText("Volume of Base :");
-
-        clearButton.setBackground(MAIN_COLOR);
-        clearButton.setFont(SEGOE_UI);
-        clearButton.setForeground(GRAY);
-        clearButton.setText("Clear");
-        clearButton.setAutoscrolls(true);
-        clearButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        setButtonProperty(clearButton,"Clear");
         clearButton.addActionListener(this::clearButtonActionPerformed);
 
-        getUnknownValueButton.setBackground(MAIN_COLOR);
-        getUnknownValueButton.setFont(SEGOE_UI);
-        getUnknownValueButton.setForeground(GRAY);
-        getUnknownValueButton.setText("Get unknown value");
-        getUnknownValueButton.setAutoscrolls(true);
-        getUnknownValueButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        setButtonProperty(getUnknownValueButton,"Get unknown value");
         getUnknownValueButton.addActionListener(this::getUnknownValueButtonActionPerformed);
 
         acidMolarityUnitComboBox.setFont(SEGOE_UI);
