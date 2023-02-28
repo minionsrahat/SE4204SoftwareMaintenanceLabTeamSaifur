@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="chemistry-calculator-main">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/out/artifacts/chemistry_calculator_main_jar/chemistry-calculator-main.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
