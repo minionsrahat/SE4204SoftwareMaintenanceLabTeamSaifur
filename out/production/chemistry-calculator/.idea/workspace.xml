@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="17544701-cbb2-499f-90ee-a14cd0ba8340" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/ChemistryCalculator/frontend/HistoryFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChemistryCalculator/frontend/HistoryFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChemistryCalculator/frontend/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChemistryCalculator/frontend/Home.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChemistryCalculator/frontend/Sidebar.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChemistryCalculator/frontend/Sidebar.java" afterDir="false" />
+    <list default="true" id="17544701-cbb2-499f-90ee-a14cd0ba8340" name="Changes" comment="Extract method- Apply this refactoring technique to TitrationPanel class">
+      <change beforePath="$PROJECT_DIR$/ChemistryCalculator/frontend/TitrationPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChemistryCalculator/frontend/TitrationPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,13 +25,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "E:/Course Material/4.2/SM/Lab Exam/Refactor and SRS/chemistry-calculator"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/Course Material/4.2/SM/Lab Exam/Refactor and SRS/chemistry-calculator&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Home" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ChemistryCalculator.frontend.Home" />
@@ -63,6 +61,28 @@
       <option name="presentableId" value="Default" />
       <updated>1677597222339</updated>
     </task>
+    <task id="LOCAL-00001" summary="Extract Method- Apply this refactoring technique to sidebar class">
+      <created>1677607880170</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1677607880170</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Introduce Parameter Object- Apply this refactoring technique to sidebar class">
+      <created>1677611291475</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1677611291475</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Extract method- Apply this refactoring technique to TitrationPanel class">
+      <created>1677614074488</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1677614074488</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -75,5 +95,11 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Extract Method- Apply this refactoring technique to sidebar class" />
+    <MESSAGE value="Introduce Parameter Object- Apply this refactoring technique to sidebar class" />
+    <MESSAGE value="Extract method- Apply this refactoring technique to TitrationPanel class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Extract method- Apply this refactoring technique to TitrationPanel class" />
   </component>
 </project>

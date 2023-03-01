@@ -141,7 +141,6 @@ public class TitrationPanel extends JPanel {
 
         notificationPanel.setBackground(new Color(51, 153, 0));
         notificationPanel.setVisible(true);
-
         notificationLabel.setBackground(Color.red);
         notificationLabel.setFont(SEGOE_UI);
         notificationLabel.setForeground(Color.white);
@@ -250,33 +249,58 @@ public class TitrationPanel extends JPanel {
         );
     }
 
+
+    public String getMolarityOfAcid() {
+        String acidMolarity = acidMolarityTextfield.getText();
+        if(acidMolarity.isEmpty()) {
+            return "";
+        } else {
+            return convertToBaseUnit(acidMolarity,acidMolarityUnitComboBox,"molars");
+        }
+    }
+
+    public String getMolarityOfBase() {
+        String baseMolarity = baseMolarityTextfield.getText();
+        if(baseMolarity.isEmpty()) {
+            return "";
+        } else {
+            return convertToBaseUnit(baseMolarity,baseMolarityUnitComboBox,"molars");
+        }
+    }
+
+    public String getVolumeOfAcid() {
+        String volumeAcid = acidVolumeTextfield.getText();
+        if(volumeAcid.isEmpty()) {
+            return "";
+        } else {
+            return convertToBaseUnit(volumeAcid,acidVolumeUnitComboBox,"milliliters");
+        }
+    }
+
+    public String getVolumeOfBase() {
+        String volumeBase= baseVolumeTextfield.getText();
+        if(volumeBase.isEmpty()) {
+            return "";
+        } else {
+            return convertToBaseUnit(volumeBase,baseVolumeUnitComboBox,"milliliters");
+        }
+    }
+
+
+    public String convertToBaseUnit(String value,JComboBox<String> comboBox,String base){
+        String unit = comboBox.getSelectedItem().toString();
+        double convertedBaseValue = Converter.convert(unit, base, Double.parseDouble(value));
+        return String.valueOf(convertedBaseValue);
+    }
+
     private void getUnknownValueButtonActionPerformed(ActionEvent evt) {
         // TODO add your handling code here:
       String molarityOfAcid = null, molarityOfBase = null, volumeOfAcid = null, volumeOfBase = null;
         try {
-
-
-             molarityOfAcid = acidMolarityTextfield.getText().isEmpty() ? acidMolarityTextfield.getText() :
-                    String.valueOf(Converter.convert(acidMolarityUnitComboBox.getSelectedItem().toString(),
-                            "molars",
-                            Double.parseDouble(acidMolarityTextfield.getText())
-                    ));
-             molarityOfBase = baseMolarityTextfield.getText().isEmpty() ? baseMolarityTextfield.getText() :
-                    String.valueOf(Converter.convert(baseMolarityUnitComboBox.getSelectedItem().toString(),
-                            "molars",
-                            Double.parseDouble(baseMolarityTextfield.getText())
-                    ));
-             volumeOfAcid = acidVolumeTextfield.getText().isEmpty() ? acidVolumeTextfield.getText() :
-                    String.valueOf(Converter.convert(acidVolumeUnitComboBox.getSelectedItem().toString(),
-                            "milliliters",
-                            Double.parseDouble(acidVolumeTextfield.getText())
-                    ));
-
-             volumeOfBase = baseVolumeTextfield.getText().isEmpty() ? baseVolumeTextfield.getText() :
-                    String.valueOf(Converter.convert(baseVolumeUnitComboBox.getSelectedItem().toString(),
-                            "milliliters",
-                            Double.parseDouble(baseVolumeTextfield.getText())
-                    ));
+             molarityOfAcid=getMolarityOfAcid();
+             molarityOfBase = getMolarityOfBase();
+             volumeOfAcid = getVolumeOfAcid();
+             volumeOfBase = getVolumeOfBase();
         }catch (NumberFormatException e) {
             notificationLabel.setText("Only numbers are allowed.");
             notificationPanel.setBackground(Color.red);
