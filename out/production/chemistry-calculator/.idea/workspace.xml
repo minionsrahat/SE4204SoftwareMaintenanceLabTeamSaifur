@@ -2,46 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ec234381-7ebf-4732-999d-2328f92799b0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChemistryCalculator/frontend/FxPieChart.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChemistryCalculator/frontend/FxPieChart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chemistry-calculator.iml" beforeDir="false" afterPath="$PROJECT_DIR$/chemistry-calculator.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/chemistry-calculator/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/chemistry-calculator/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/chemistry-calculator/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/chemistry-calculator/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/chemistry-calculator/ChemistryCalculator/backend/Atom.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/chemistry-calculator/ChemistryCalculator/backend/Atom.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/chemistry-calculator/ChemistryCalculator/backend/Compound.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/chemistry-calculator/ChemistryCalculator/backend/Compound.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/chemistry-calculator/ChemistryCalculator/backend/CompoundManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/chemistry-calculator/ChemistryCalculator/backend/CompoundManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/chemistry-calculator/ChemistryCalculator/backend/Concentration.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/chemistry-calculator/ChemistryCalculator/backend/Concentration.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/chemistry-calculator/ChemistryCalculator/backend/Converter$Step.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/chemistry-calculator/ChemistryCalculator/backend/Converter$Step.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/chemistry-calculator/ChemistryCalculator/backend/Converter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/chemistry-calculator/ChemistryCalculator/backend/Converter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/chemistry-calculator/ChemistryCalculator/backend/Database.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/chemistry-calculator/ChemistryCalculator/backend/Database.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/chemistry-calculator/ChemistryCalculator/backend/DatabaseSerializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/chemistry-calculator/ChemistryCalculator/backend/DatabaseSerializer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChemistryCalculator/backend/EquationBalancer.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChemistryCalculator/backend/EquationBalancer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChemistryCalculator/frontend/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChemistryCalculator/frontend/Home.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/chemistry-calculator/ChemistryCalculator/backend/EquationBalancer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/chemistry-calculator/ChemistryCalculator/backend/EquationBalancer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/chemistry-calculator/ChemistryCalculator/backend/Fraction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/chemistry-calculator/ChemistryCalculator/backend/Fraction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/chemistry-calculator/ChemistryCalculator/backend/History.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/chemistry-calculator/ChemistryCalculator/backend/History.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/chemistry-calculator/ChemistryCalculator/backend/InsufficientDataException.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/chemistry-calculator/ChemistryCalculator/backend/InsufficientDataException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/chemistry-calculator/ChemistryCalculator/backend/InvalidAtomException.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/chemistry-calculator/ChemistryCalculator/backend/InvalidAtomException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/chemistry-calculator/ChemistryCalculator/backend/InvalidEquationException.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/chemistry-calculator/ChemistryCalculator/backend/InvalidEquationException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/chemistry-calculator/ChemistryCalculator/backend/Matrix.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/chemistry-calculator/ChemistryCalculator/backend/Matrix.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/chemistry-calculator/ChemistryCalculator/backend/Titration.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/chemistry-calculator/ChemistryCalculator/backend/Titration.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/chemistry-calculator/ChemistryCalculator/frontend/ConcentrationPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/chemistry-calculator/ChemistryCalculator/frontend/ConcentrationPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/chemistry-calculator/ChemistryCalculator/frontend/ElectronConfigPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/chemistry-calculator/ChemistryCalculator/frontend/ElectronConfigPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/chemistry-calculator/ChemistryCalculator/frontend/EquationBalancePanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/chemistry-calculator/ChemistryCalculator/frontend/EquationBalancePanel$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/chemistry-calculator/ChemistryCalculator/frontend/EquationBalancePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/chemistry-calculator/ChemistryCalculator/frontend/EquationBalancePanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/chemistry-calculator/ChemistryCalculator/frontend/Formater.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/chemistry-calculator/ChemistryCalculator/frontend/Formater.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/chemistry-calculator/ChemistryCalculator/frontend/FxPieChart.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/chemistry-calculator/ChemistryCalculator/frontend/FxPieChart.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/chemistry-calculator/ChemistryCalculator/frontend/HistoryFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/chemistry-calculator/ChemistryCalculator/frontend/HistoryFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/chemistry-calculator/ChemistryCalculator/frontend/Home.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/chemistry-calculator/ChemistryCalculator/frontend/Home.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/chemistry-calculator/ChemistryCalculator/frontend/MolarMassPanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/chemistry-calculator/ChemistryCalculator/frontend/MolarMassPanel$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/chemistry-calculator/ChemistryCalculator/frontend/MolarMassPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/chemistry-calculator/ChemistryCalculator/frontend/MolarMassPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/chemistry-calculator/ChemistryCalculator/frontend/NeedHelpPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/chemistry-calculator/ChemistryCalculator/frontend/NeedHelpPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/chemistry-calculator/ChemistryCalculator/frontend/PercentOfCompletionPanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/chemistry-calculator/ChemistryCalculator/frontend/PercentOfCompletionPanel$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/chemistry-calculator/ChemistryCalculator/frontend/PercentOfCompletionPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/chemistry-calculator/ChemistryCalculator/frontend/PercentOfCompletionPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/chemistry-calculator/ChemistryCalculator/frontend/Sidebar$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/chemistry-calculator/ChemistryCalculator/frontend/Sidebar$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/chemistry-calculator/ChemistryCalculator/frontend/Sidebar.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/chemistry-calculator/ChemistryCalculator/frontend/Sidebar.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/chemistry-calculator/ChemistryCalculator/frontend/TitrationPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/chemistry-calculator/ChemistryCalculator/frontend/TitrationPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/chemistry-calculator/chemistry-calculator.iml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/chemistry-calculator/chemistry-calculator.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +51,8 @@
       <updated>1677604168465</updated>
       <workItem from="1677604169795" duration="55000" />
       <workItem from="1677610539296" duration="1588000" />
-      <workItem from="1677638811166" duration="419000" />
+      <workItem from="1677638811166" duration="3807000" />
+      <workItem from="1677674767503" duration="383000" />
     </task>
     <servers />
   </component>

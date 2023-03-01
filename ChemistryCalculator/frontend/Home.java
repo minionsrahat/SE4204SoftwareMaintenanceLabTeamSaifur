@@ -138,7 +138,7 @@ public class Home extends JFrame {
         //setting frame properties
 
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Chemistry Calculator");
+        setTitle("Chemistry CalculatorH2OH");
         setAlwaysOnTop(true);
         setIconImage(new ImageIcon(getClass().getResource("/ChemistryCalculator/icons/icons8_biohazard_120px.png")).getImage());
         setLocationByPlatform(true);

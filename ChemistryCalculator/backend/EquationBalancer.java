@@ -1,6 +1,8 @@
 package ChemistryCalculator.backend;
 
 
+import java.util.stream.IntStream;
+
 public class EquationBalancer {
     private final String reactants;
     private final String products;
@@ -36,42 +38,26 @@ public class EquationBalancer {
             long[] balancedCoefficient = Fraction.normalize(nullSpace);
 
             StringBuilder result = new StringBuilder();
-            for (int i = 0; i < reactants.length; i++) {
-                if (i == reactants.length - 1) {
-                    if (balancedCoefficient[i] == 1) {
-                        result.append(reactants[i]).append(" ");
-                    } else {
-                        result.append(balancedCoefficient[i]).append(reactants[i]).append(" ");
-                    }
-                } else {
-                    if (balancedCoefficient[i] == 1) {
-                        result.append(reactants[i]).append(" + ");
-                    } else {
-                        result.append(balancedCoefficient[i]).append(reactants[i]).append(" + ");
-                    }
-                }
-
-            }
-
+            IntStream.range(0, products.length)
+                    .forEach(i -> {
+                        if (i == products.length - 1) {
+                            result.append(balancedCoefficient[i + reactants.length] == 1 ? products[i] + " " : balancedCoefficient[i + reactants.length] + products[i] + " ");
+                        } else {
+                            result.append(balancedCoefficient[i + reactants.length] == 1 ? products[i] + " + " : balancedCoefficient[i + reactants.length] + products[i] + " + ");
+                        }
+                    });
             result.append("= ");
 
 
-            for (int i = 0; i < products.length; i++) {
-                if (i == products.length - 1) {
-                    if (balancedCoefficient[i + reactants.length] == 1) {
-                        result.append(products[i]).append(" ");
-                    } else {
-                        result.append(balancedCoefficient[i + reactants.length]).append(products[i]).append(" ");
-                    }
-                } else {
-                    if (balancedCoefficient[i + reactants.length] == 1) {
-                        result.append(products[i]).append(" + ");
-                    } else {
-                        result.append(balancedCoefficient[i + reactants.length]).append(products[i]).append(" + ");
-                    }
-                }
+            IntStream.range(0, products.length)
+                    .forEach(i -> {
+                        if (i == products.length - 1) {
+                            result.append(balancedCoefficient[i + reactants.length] == 1 ? products[i] + " " : balancedCoefficient[i + reactants.length] + products[i] + " ");
+                        } else {
+                            result.append(balancedCoefficient[i + reactants.length] == 1 ? products[i] + " + " : balancedCoefficient[i + reactants.length] + products[i] + " + ");
+                        }
+                    });
 
-            }
             balancedEquation = result.toString();
 
 
