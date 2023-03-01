@@ -3,6 +3,7 @@ package ChemistryCalculator.frontend;
 import ChemistryCalculator.backend.Converter;
 import ChemistryCalculator.backend.InsufficientDataException;
 import ChemistryCalculator.backend.Titration;
+import sun.rmi.server.InactiveGroupException;
 
 import javax.swing.*;
 import java.awt.*;
@@ -355,7 +356,6 @@ public class TitrationPanel extends JPanel {
         }
         if (acidVolumeTextfield.getText().isEmpty()) {
             try {
-
                 acidVolumeTextfield.setText(
                         String.format("%.5f",
                                 Converter.convert("milliliters",
@@ -363,12 +363,13 @@ public class TitrationPanel extends JPanel {
                                         titration.getUnknownValue())
                         ));
                 notificationPanel.setVisible(false);
-            } catch (InsufficientDataException e) {
-                notificationPanel.setBackground(Color.red);
-                notificationLabel.setText(e.getMessage());
-                notificationPanel.setVisible(true);
-            } catch (NumberFormatException e) {
-                notificationLabel.setText("Only numbers are allowed.");
+            }
+            catch ( Exception e){
+                if(e instanceof InsufficientDataException){
+                    notificationLabel.setText(e.getMessage());
+                } else if (e instanceof NumberFormatException) {
+                    notificationLabel.setText("Only numbers are allowed.");
+                }
                 notificationPanel.setBackground(Color.red);
                 notificationPanel.setVisible(true);
             }
@@ -383,12 +384,13 @@ public class TitrationPanel extends JPanel {
                                         titration.getUnknownValue())
                         ));
                 notificationPanel.setVisible(false);
-            } catch (InsufficientDataException e) {
-                notificationPanel.setBackground(Color.red);
-                notificationLabel.setText(e.getMessage());
-                notificationPanel.setVisible(true);
-            } catch (NumberFormatException e) {
-                notificationLabel.setText("Only numbers are allowed.");
+            }
+            catch (Exception e){
+                if(e instanceof InsufficientDataException){
+                    notificationLabel.setText(e.getMessage());
+                } else if (e instanceof NumberFormatException) {
+                    notificationLabel.setText("Only numbers are allowed.");
+                }
                 notificationPanel.setBackground(Color.red);
                 notificationPanel.setVisible(true);
             }
@@ -398,12 +400,13 @@ public class TitrationPanel extends JPanel {
             try {
                 acidMoleTextfield.setText(String.format("%.5f", titration.getUnknownValue()));
                 notificationPanel.setVisible(false);
-            } catch (InsufficientDataException e) {
-                notificationPanel.setBackground(Color.red);
-                notificationLabel.setText(e.getMessage());
-                notificationPanel.setVisible(true);
-            } catch (NumberFormatException e) {
-                notificationLabel.setText("Only numbers are allowed.");
+            }
+            catch (Exception e){
+                if(e instanceof InsufficientDataException ){
+                    notificationLabel.setText(e.getMessage());
+                } else if (e instanceof NumberFormatException) {
+                    notificationLabel.setText("Only numbers are allowed.");
+                }
                 notificationPanel.setBackground(Color.red);
                 notificationPanel.setVisible(true);
             }
@@ -413,12 +416,13 @@ public class TitrationPanel extends JPanel {
             try {
                 baseMoleTextfield.setText(String.format("%.5f", titration.getUnknownValue()));
                 notificationPanel.setVisible(false);
-            } catch (InsufficientDataException e) {
-                notificationPanel.setBackground(Color.red);
-                notificationLabel.setText(e.getMessage());
-                notificationPanel.setVisible(true);
-            } catch (NumberFormatException e) {
-                notificationLabel.setText("Only numbers are allowed.");
+            }
+            catch (Exception e) {
+                if (e instanceof InsufficientDataException) {
+                    notificationLabel.setText(e.getMessage());
+                } else if (e instanceof NumberFormatException) {
+                    notificationLabel.setText("Only numbers are allowed.");
+                }
                 notificationPanel.setBackground(Color.red);
                 notificationPanel.setVisible(true);
             }
