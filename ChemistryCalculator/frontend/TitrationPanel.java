@@ -294,6 +294,16 @@ public class TitrationPanel extends JPanel {
         return String.valueOf(convertedBaseValue);
     }
 
+    public void showNotificationPanel(Exception e){
+        if(e instanceof InsufficientDataException){
+            notificationLabel.setText(e.getMessage());
+        }
+        else if (e instanceof NumberFormatException) {
+            notificationLabel.setText("Only numbers are allowed.");
+        }
+        notificationPanel.setBackground(Color.red);
+        notificationPanel.setVisible(true);
+    }
     private void getUnknownValueButtonActionPerformed(ActionEvent evt) {
         // TODO add your handling code here:
       String molarityOfAcid = null, molarityOfBase = null, volumeOfAcid = null, volumeOfBase = null;
@@ -322,14 +332,8 @@ public class TitrationPanel extends JPanel {
                                         titration.getUnknownValue())
                         ));
                 notificationPanel.setVisible(false);
-            } catch (InsufficientDataException e) {
-                notificationPanel.setBackground(Color.red);
-                notificationLabel.setText(e.getMessage());
-                notificationPanel.setVisible(true);
-            } catch (NumberFormatException e) {
-                notificationLabel.setText("Only numbers are allowed.");
-                notificationPanel.setBackground(Color.red);
-                notificationPanel.setVisible(true);
+            } catch (Exception e) {
+                showNotificationPanel(e);
             }
             return;
         }
@@ -343,14 +347,7 @@ public class TitrationPanel extends JPanel {
                         ));
                 notificationPanel.setVisible(false);
             } catch (Exception e) {
-                if(e instanceof InsufficientDataException){
-                    notificationLabel.setText(e.getMessage());
-                }
-                else if (e instanceof NumberFormatException) {
-                    notificationLabel.setText("Only numbers are allowed.");
-                }
-                notificationPanel.setBackground(Color.red);
-                notificationPanel.setVisible(true);
+                showNotificationPanel(e);
             }
             return;
         }
@@ -365,13 +362,7 @@ public class TitrationPanel extends JPanel {
                 notificationPanel.setVisible(false);
             }
             catch ( Exception e){
-                if(e instanceof InsufficientDataException){
-                    notificationLabel.setText(e.getMessage());
-                } else if (e instanceof NumberFormatException) {
-                    notificationLabel.setText("Only numbers are allowed.");
-                }
-                notificationPanel.setBackground(Color.red);
-                notificationPanel.setVisible(true);
+                showNotificationPanel(e);
             }
             return;
         }
@@ -386,13 +377,7 @@ public class TitrationPanel extends JPanel {
                 notificationPanel.setVisible(false);
             }
             catch (Exception e){
-                if(e instanceof InsufficientDataException){
-                    notificationLabel.setText(e.getMessage());
-                } else if (e instanceof NumberFormatException) {
-                    notificationLabel.setText("Only numbers are allowed.");
-                }
-                notificationPanel.setBackground(Color.red);
-                notificationPanel.setVisible(true);
+                showNotificationPanel(e);
             }
             return;
         }
@@ -402,13 +387,7 @@ public class TitrationPanel extends JPanel {
                 notificationPanel.setVisible(false);
             }
             catch (Exception e){
-                if(e instanceof InsufficientDataException ){
-                    notificationLabel.setText(e.getMessage());
-                } else if (e instanceof NumberFormatException) {
-                    notificationLabel.setText("Only numbers are allowed.");
-                }
-                notificationPanel.setBackground(Color.red);
-                notificationPanel.setVisible(true);
+                showNotificationPanel(e);
             }
             return;
         }
@@ -418,13 +397,7 @@ public class TitrationPanel extends JPanel {
                 notificationPanel.setVisible(false);
             }
             catch (Exception e) {
-                if (e instanceof InsufficientDataException) {
-                    notificationLabel.setText(e.getMessage());
-                } else if (e instanceof NumberFormatException) {
-                    notificationLabel.setText("Only numbers are allowed.");
-                }
-                notificationPanel.setBackground(Color.red);
-                notificationPanel.setVisible(true);
+                showNotificationPanel(e);
             }
         }
 
