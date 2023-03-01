@@ -341,12 +341,13 @@ public class TitrationPanel extends JPanel {
                                         titration.getUnknownValue())
                         ));
                 notificationPanel.setVisible(false);
-            } catch (InsufficientDataException e) {
-                notificationPanel.setBackground(Color.red);
-                notificationLabel.setText(e.getMessage());
-                notificationPanel.setVisible(true);
-            } catch (NumberFormatException e) {
-                notificationLabel.setText("Only numbers are allowed.");
+            } catch (Exception e) {
+                if(e instanceof InsufficientDataException){
+                    notificationLabel.setText(e.getMessage());
+                }
+                else if (e instanceof NumberFormatException) {
+                    notificationLabel.setText("Only numbers are allowed.");
+                }
                 notificationPanel.setBackground(Color.red);
                 notificationPanel.setVisible(true);
             }
