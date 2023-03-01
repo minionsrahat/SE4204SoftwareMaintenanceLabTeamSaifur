@@ -3,6 +3,7 @@ package ChemistryCalculator.frontend;
 import ChemistryCalculator.backend.Compound;
 import ChemistryCalculator.backend.InvalidAtomException;
 
+import java.awt.event.ActionListener;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
@@ -14,18 +15,18 @@ public class PercentOfCompletionPanel extends JPanel {
     private static final Color MAIN_COLOR = new Color(64, 43,  100);
     private static final Color GRAY = new Color(204, 204,  204);
 
-    private final JLabel labelforcompoundTextfield = new JLabel();
-    private final JTextField compoundTextfield = new JTextField();
+    private  JLabel labelforcompoundTextfield = new JLabel();
+    private  JTextField compoundTextfield = new JTextField();
 
-    private final JButton getPercentOfCompletionButton = new JButton();
-    private final JButton clearButton = new JButton();
+    private  JButton getPercentOfCompletionButton = new JButton();
+    private  JButton clearButton = new JButton();
 
-    private final JScrollPane ansTableScrollPane = new JScrollPane();
-    private final JTable ansTable = new JTable();
-    private final JButton pieChartButton = new JButton();
+    private  JScrollPane ansTableScrollPane = new JScrollPane();
+    private  JTable ansTable = new JTable();
+    private  JButton pieChartButton = new JButton();
 
-    private final JPanel errorMessagePanel = new JPanel();
-    private final JLabel errorMessageLabel = new JLabel();
+    private  JPanel errorMessagePanel = new JPanel();
+    private  JLabel errorMessageLabel = new JLabel();
 
 
     private DefaultTableModel dataTableModel;
@@ -35,76 +36,76 @@ public class PercentOfCompletionPanel extends JPanel {
         setComponentLayout();
     }
 
+    private JLabel createLabel(String text, Font font, Color foregroundColor) {
+        JLabel label = new JLabel();
+        label.setFont(font);
+        label.setForeground(foregroundColor);
+        label.setText(text);
+        return label;
+    }
+
+    private JButton createButton(String text, Font font, Color backgroundColor, Color foregroundColor, boolean isAutoscrolls, Cursor cursor, ActionListener actionListener) {
+        JButton button = new JButton();
+        button.setBackground(backgroundColor);
+        button.setFont(font);
+        button.setForeground(foregroundColor);
+        button.setText(text);
+        button.setAutoscrolls(isAutoscrolls);
+        button.setCursor(cursor);
+        button.addActionListener(actionListener);
+        return button;
+    }
+
+    private JTable createTable(DefaultTableModel tableModel, Font font, Color backgroundColor, Color foregroundColor, boolean showVerticalLines) {
+        JTable table = new JTable();
+        table.setModel(tableModel);
+        table.setBackground(backgroundColor);
+        table.setBorder(BorderFactory.createEtchedBorder());
+        table.setFont(font);
+        table.setForeground(foregroundColor);
+        table.setRowHeight(50);
+        table.setShowVerticalLines(showVerticalLines);
+        table.setCursor(new Cursor(Cursor.TEXT_CURSOR));
+        return table;
+    }
+
+    private JScrollPane createPanel(Color backgroundColor, boolean visible) {
+        JScrollPane scrollPane = new JScrollPane();
+        scrollPane.setVisible(visible);
+        scrollPane.setBackground(backgroundColor);
+        scrollPane.setBorder(BorderFactory.createEtchedBorder());
+        return scrollPane;
+    }
+
+    private JPanel createJPanel(Color color, boolean visible) {
+        JPanel panel = new JPanel();
+        panel.setBackground(color);
+        panel.setVisible(visible);
+        return panel;
+    }
+
     private void initComponent() {
-        labelforcompoundTextfield.setFont(SEGOE_UI);
-        labelforcompoundTextfield.setForeground(MAIN_COLOR);
-        labelforcompoundTextfield.setText("Enter Compound :");
+        labelforcompoundTextfield = createLabel("Enter Compound :", SEGOE_UI, MAIN_COLOR);
 
-        getPercentOfCompletionButton.setBackground(MAIN_COLOR);
-        getPercentOfCompletionButton.setFont(SEGOE_UI);
-        getPercentOfCompletionButton.setForeground(GRAY);
-        getPercentOfCompletionButton.setText("Percent of completion");
-        getPercentOfCompletionButton.setAutoscrolls(true);
-        getPercentOfCompletionButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        getPercentOfCompletionButton.addActionListener(this::pcom_ans_buttonActionPerformed);
+        getPercentOfCompletionButton = createButton("Percent of completion", SEGOE_UI, MAIN_COLOR, GRAY, true, new Cursor(Cursor.HAND_CURSOR), this::pcom_ans_buttonActionPerformed);
 
-        ansTableScrollPane.setVisible(false);
-
-        ansTable.setBackground(MAIN_COLOR);
-        ansTable.setBorder(BorderFactory.createEtchedBorder());
-        ansTable.setFont(SEGOE_UI);
-        ansTable.setForeground(GRAY);
-        dataTableModel = new DefaultTableModel(
-                new Object[][]{},
-                new String[]{}
-        ) {
-            Class[] types = new Class[]{
-                    String.class, String.class, String.class, String.class, String.class
-            };
-            boolean[] canEdit = new boolean[]{
-                    false, false, false, false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types[columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit[columnIndex];
-            }
-        };
-
-        ansTable.setModel(dataTableModel);
-        ansTable.setCursor(new Cursor(Cursor.TEXT_CURSOR));
-        ansTable.setRowHeight(50);
-        ansTable.setShowVerticalLines(false);
+        ansTableScrollPane = createPanel(MAIN_COLOR, false);
+        dataTableModel = new DefaultTableModel(new Object[][] {}, new String[] {});
+        ansTable = createTable(dataTableModel, SEGOE_UI, MAIN_COLOR, GRAY, false);
         ansTableScrollPane.setViewportView(ansTable);
 
+        pieChartButton = createButton("See pie chart", SEGOE_UI, MAIN_COLOR, GRAY, true, new Cursor(Cursor.HAND_CURSOR), this::pcom_pie_chart_buttonActionPerformed);
         pieChartButton.setVisible(false);
-        pieChartButton.setBackground(MAIN_COLOR);
-        pieChartButton.setFont(SEGOE_UI);
-        pieChartButton.setForeground(GRAY);
-        pieChartButton.setText("See pie chart");
-        pieChartButton.setAutoscrolls(true);
-        pieChartButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        pieChartButton.addActionListener(this::pcom_pie_chart_buttonActionPerformed);
 
-        errorMessagePanel.setBackground(Color.red);
-        errorMessagePanel.setVisible(false);
-
-
-        errorMessageLabel.setFont(SEGOE_UI);
-        errorMessageLabel.setForeground(Color.white);
+        errorMessagePanel = createJPanel(Color.red, false);
+        errorMessageLabel = createLabel("", SEGOE_UI, Color.white);
         errorMessageLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        errorMessagePanel.add(errorMessageLabel);
 
-        clearButton.setBackground(MAIN_COLOR);
-        clearButton.setFont(SEGOE_UI);
-        clearButton.setForeground(GRAY);
-        clearButton.setText("Clear");
-        clearButton.setAutoscrolls(true);
-        clearButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        clearButton.addActionListener(this::pcom_clear_buttonActionPerformed);
+        clearButton = createButton("Clear", SEGOE_UI, MAIN_COLOR, GRAY, true, new Cursor(Cursor.HAND_CURSOR), this::pcom_clear_buttonActionPerformed);
     }
+
+
 
     private void setComponentLayout() {
         //error Message Panel Layout
