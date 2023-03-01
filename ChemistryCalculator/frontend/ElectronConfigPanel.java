@@ -98,6 +98,7 @@ public class ElectronConfigPanel extends JPanel {
         clearButton.addActionListener(this::clearButtonActionPerformed);
     }
 
+
     private void setComponentLayout() {
         //Layout for Error message panel
         GroupLayout errorMessagePanelLayout = new GroupLayout(errorMessagePanel);

@@ -42,6 +42,25 @@ public class MolarMassPanel extends JPanel {
         setComponentLayout();
     }
 
+
+    private void setButtonProperty(JButton btn,String text){
+        btn.setBackground(MAIN_COLOR);
+        btn.setFont(SEGOE_UI);
+        btn.setForeground(GRAY);
+        btn.setText(text);
+        btn.setAutoscrolls(true);
+        btn.setCursor(new Cursor(Cursor.HAND_CURSOR));
+
+
+    }
+
+    private void setLabelProperty(JLabel label){
+        label.setFont(SEGOE_UI);
+        label.setForeground(new Color(0, 102, 102));
+        label.setVisible(false);
+    }
+
+
     private void  initComponent() {
 
         labelForCompoundTextfield.setFont(SEGOE_UI);
@@ -76,12 +95,8 @@ public class MolarMassPanel extends JPanel {
         ansTableScrollPane.setViewportView(ansTable);
         ansTableScrollPane.setVisible(false);
 
-        getMolarMassButton.setBackground(MAIN_COLOR);
-        getMolarMassButton.setFont(SEGOE_UI);
-        getMolarMassButton.setForeground(GRAY);
-        getMolarMassButton.setText("Get Molar mass");
-        getMolarMassButton.setAutoscrolls(true);
-        getMolarMassButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
+
+        setButtonProperty(getMolarMassButton,"Get Molar mass");
         getMolarMassButton.addActionListener(this::molarMassButtonActionPerformed);
 
         additionalText1.setFont(SEGOE_UI);
@@ -96,31 +111,14 @@ public class MolarMassPanel extends JPanel {
         errorMessageLabel.setFont(SEGOE_UI);
         errorMessageLabel.setForeground(Color.white);
         errorMessageLabel.setHorizontalAlignment(SwingConstants.CENTER);
-        clearButton.setBackground(MAIN_COLOR);
-        clearButton.setFont(SEGOE_UI);
-        clearButton.setForeground(GRAY);
-        clearButton.setText("Clear");
-        clearButton.setAutoscrolls(true);
-        clearButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        setButtonProperty(clearButton,"Clear");
         clearButton.addActionListener(this::molerMassClearButtonActionPerformed);
-
-        compoundAnsLabel.setFont(SEGOE_UI);
-        compoundAnsLabel.setForeground(new Color(0, 102, 102));
-        compoundAnsLabel.setVisible(false);
-
-        massAnsLabel.setFont(SEGOE_UI);
-        massAnsLabel.setForeground(new Color(0, 102, 102));
-        massAnsLabel.setVisible(false);
-
-        additionalText2.setFont(SEGOE_UI);
-        additionalText2.setForeground(MAIN_COLOR);
+        setLabelProperty(compoundAnsLabel);
+        setLabelProperty(massAnsLabel);
+        setLabelProperty(additionalText2);
         additionalText2.setText("is");
-        additionalText2.setVisible(false);
-
-        additionalText3.setFont(SEGOE_UI);
-        additionalText3.setForeground(MAIN_COLOR);
+        setLabelProperty(additionalText3);
         additionalText3.setText("gram. Details are given below. ");
-        additionalText3.setVisible(false);
     }
 
     private void setComponentLayout() {
@@ -214,7 +212,6 @@ public class MolarMassPanel extends JPanel {
             } catch (InvalidAtomException e) {
                 errorMessagePanel.setVisible(true);
                 errorMessageLabel.setText(e.getMessage());
-
                 additionalText1.setVisible(false);
                 compoundAnsLabel.setVisible(false);
                 additionalText2.setVisible(false);
