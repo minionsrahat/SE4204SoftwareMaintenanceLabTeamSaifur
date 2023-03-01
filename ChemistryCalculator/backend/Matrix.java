@@ -62,32 +62,37 @@ public class Matrix {
             }
 
             if (!matrix[pivot][j].isZero()) {
-                Fraction[] temp = matrix[i];
-                matrix[i] = matrix[pivot];
-                matrix[pivot] = temp;
-
-                Fraction div = matrix[i][j];
-
-                for (int idx = 0; idx < matrix[0].length; idx++) {
-                    matrix[i][idx] = matrix[i][idx].divide(div);
-
-                }
+                swapRows(i, pivot);
+                divideRow(i, matrix[i][j]);
 
                 for (int u = i + 1; u < matrix.length; u++) {
-                    Fraction mult = matrix[u][j];
-                    if (!mult.isZero()) {
-                        for (int l = 0; l < matrix[0].length; l++) {
-                            matrix[u][l] = matrix[u][l].subtract(mult.multiply(matrix[i][l]));
-
-                        }
-                    }
+                    subtractRows(u, i, matrix[u][j]);
                 }
             }
+
             j++;
             i++;
         }
 
         return new Matrix(matrix);
+    }
+
+    private void swapRows(int row1, int row2) {
+        Fraction[] temp = matrix[row1];
+        matrix[row1] = matrix[row2];
+        matrix[row2] = temp;
+    }
+
+    private void divideRow(int row, Fraction divisor) {
+        for (int idx = 0; idx < matrix[0].length; idx++) {
+            matrix[row][idx] = matrix[row][idx].divide(divisor);
+        }
+    }
+
+    private void subtractRows(int targetRow, int subtractRow, Fraction multiplier) {
+        for (int l = 0; l < matrix[0].length; l++) {
+            matrix[targetRow][l] = matrix[targetRow][l].subtract(multiplier.multiply(matrix[subtractRow][l]));
+        }
     }
 
     //back Substitution is the process of solving a linear system of equations that has been transformed into row-echelon form or reduced row-echelon form
