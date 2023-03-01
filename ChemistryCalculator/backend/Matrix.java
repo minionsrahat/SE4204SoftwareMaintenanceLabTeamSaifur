@@ -29,7 +29,6 @@ public class Matrix {
             for (int j = 0; j < matrix[i].length; j++) {
                 newMatrix[i][j] = new Fraction(matrix[i][j]);
             }
-
         }
         return newMatrix;
     }
@@ -46,21 +45,16 @@ public class Matrix {
     //    0   1   0   4
     //    0   0   0   1
 
-    //more info => https://en.wikipedia.org/wiki/Gaussian_elimination#Echelon_form
-
     public Matrix gaussianElimination() {
         int i = 0;
         int j = 0;
-
         while (i < matrix.length && j < matrix[0].length) {
-
             int pivot = i;
             for (int k = i + 1; k < matrix.length; k++) {
                 if (matrix[k][j].isAbsGreaterThan(matrix[pivot][j])) {
                     pivot = k;
                 }
             }
-
             if (!matrix[pivot][j].isZero()) {
                 swapRows(i, pivot);
                 divideRow(i, matrix[i][j]);
@@ -69,11 +63,9 @@ public class Matrix {
                     subtractRows(u, i, matrix[u][j]);
                 }
             }
-
             j++;
             i++;
         }
-
         return new Matrix(matrix);
     }
 
@@ -97,7 +89,6 @@ public class Matrix {
 
     //back Substitution is the process of solving a linear system of equations that has been transformed into row-echelon form or reduced row-echelon form
     //The last equation is solved first, then the next-to-last, etc.
-
     private void backSubstitute(int n, Matrix echelonForm) {
 
         for (int i = n - 1; i >= 0; i--) {
@@ -110,12 +101,7 @@ public class Matrix {
         }
     }
 
-    //In mathematics, more specifically in linear algebra and functional analysis, the kernel of a linear mapping,
-    //also known as the null space or nullspace, is the set of vectors in the domain of the mapping which are mapped to the zero vector.
-
-    //But this function returns only one set of vector which is enough for Chemical Equation Balancing.
     //Invalid Chemical Equation has no nullSpace
-
     public Fraction[] nullSpace() {
         Matrix echelonFormed = gaussianElimination();
 
@@ -177,7 +163,6 @@ public class Matrix {
                 transposedMatrix[j][i] = matrix[i][j];
             }
         }
-
         return new Matrix(transposedMatrix);
     }
 
