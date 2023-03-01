@@ -1,5 +1,7 @@
 package ChemistryCalculator.backend;
 
+import java.util.Arrays;
+
 public class Fraction {
 
     private int numerator;
@@ -35,21 +37,16 @@ public class Fraction {
 
     //computing the greatest common divisor.Example => (3 , 6)  == 3
     public int getGCD(int a, int b) {
-        if (a < 0) {
-            a = -a;
-        }
-        if (b < 0) {
-            b = -b;
-        }
+        a = Math.abs(a);
+        b = Math.abs(b);
         while (b != 0) {
-            a %= b;
-            if (a == 0) {
-                return b;
-            }
-            b %= a;
+            int temp = a % b;
+            a = b;
+            b = temp;
         }
         return a;
     }
+
 
     //Example => 3/6  == 1/3
     private void reduce() {
@@ -105,32 +102,28 @@ public class Fraction {
 
     //computing the lowest common multiple. Example => (3, 4, 1, 2) == 12
     public static long getLCM(long[] a) {
-        long lcm = 0, max;
         boolean found;
-        if (a.length != 0) {
-
-            max = a[0];
+        long lcm = 0;
+        if (a.length == 0) {
+            return 0;
+        }
+        long max = Arrays.stream(a).max().getAsLong();
+        for (long i = max;; i += max) {
+            found = true;
             for (long l : a) {
-                if (l > max) {
-                    max = l;
-                }
-            }
-            for (long i = max;; i += max) {
-                found = true;
-                for (long l : a) {
-                    if (i % l != 0) {
-                        found = false;
-                        break;
-                    }
-                }
-                if (found) {
-                    lcm = i;
+                if (i % l != 0) {
+                    found = false;
                     break;
                 }
+            }
+            if (found) {
+                lcm = i;
+                break;
             }
         }
         return lcm;
     }
+
 
     //Example => (1/3, 1/4, 1, 3) == (4, 3, 12, 36)
     public static long[] normalize(Fraction[] fraction) {
