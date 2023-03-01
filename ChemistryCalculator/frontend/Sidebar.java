@@ -49,7 +49,6 @@ public class Sidebar extends JPanel {
 
         menuIcon.setHorizontalAlignment(SwingConstants.CENTER);
         menuIcon.setIcon(icon);
-
         menuLabel.setFont(normal_menu_font);
         menuLabel.setForeground(new Color(221, 221, 221));
         menuLabel.setText(name);
@@ -89,21 +88,29 @@ public class Sidebar extends JPanel {
         this.setBackground(new Color(54, 33, 89));
         menuHolderScrollPane.setBorder(null);
         menuHolderScrollPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-
         menuHolder.setBackground(new Color(54, 33, 89));
         menuHolderScrollPane.setViewportView(menuHolder);
 
-        logoPanel.setFont(new Font("Segoe UI", 1, 24));
-        logoPanel.setForeground(new Color(221, 221, 221));
-        logoPanel.setHorizontalAlignment(SwingConstants.CENTER);
-        logoPanel.setText("ChemCal");
+        Font logoPanelFont=new Font("Segoe UI", 1, 24);
+        Color logoPanelColor=new Color(221, 221, 221);
 
+        Font developer_sign_labelFont=new Font("Segoe UI", 1, 12);
+        Color developer_sign_labelColor=new Color(221, 221, 221);
 
-        developer_sign_label.setFont(new Font("Segoe UI", 1, 12));
-        developer_sign_label.setForeground(new Color(221, 221, 221));
-        developer_sign_label.setHorizontalAlignment(SwingConstants.CENTER);
-        developer_sign_label.setText("Developed by - HumbleFooL");
+        setFontPropertyOfLabel(logoPanel,logoPanelFont,logoPanelColor,"ChemCal");
+        setFontPropertyOfLabel(developer_sign_label,developer_sign_labelFont,developer_sign_labelColor,"Developed by - HumbleFooL");
+
     }
+
+    private void setFontPropertyOfLabel(JLabel label,Font font,Color color,String text){
+        label.setFont(font);
+        label.setForeground(color);
+        label.setHorizontalAlignment(SwingConstants.CENTER);
+        label.setText(text);
+
+
+    }
+
 
     private void setComponentLayout() {
 

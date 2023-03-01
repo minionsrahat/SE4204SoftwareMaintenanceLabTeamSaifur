@@ -143,7 +143,7 @@ public class DatabaseSerializer {
 
 
         //this path will vary for project location.
-        FileOutputStream fileOutputStream = new FileOutputStream("C:/Users/HP/Desktop/ChemCal/src/ChemistryCalculator/database/databases.ser");
+        FileOutputStream fileOutputStream = new FileOutputStream("E:\\Course Material\\4.2\\SM\\Lab Exam\\Refactor and SRS\\chemistry-calculator\\ChemistryCalculator\\database\\database.ser");
         ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
         objectOutputStream.writeObject(hashMap);
 

@@ -8,8 +8,6 @@ public class Home extends JFrame {
     private final JPanel backgroundPanel = new JPanel();
     private final JPanel bodyPanel = new JPanel();
     private final Sidebar sidebarPanel = new Sidebar();
-
-
     //body panels
     private final JPanel equationBalancePanel = new EquationBalancePanel();
     private final JPanel concentrationPanel = new ConcentrationPanel();

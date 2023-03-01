@@ -50,96 +50,83 @@ public class TitrationPanel extends JPanel {
         setComponentLayout();
     }
 
+
+    private void setFontPropertyToTextFieldLabel(JLabel label, String text){
+        label.setFont(SEGOE_UI);
+        label.setForeground(MAIN_COLOR);
+        label.setText(text);
+    }
+
+
+    private void setButtonProperty(JButton btn,String text){
+        btn.setBackground(MAIN_COLOR);
+        btn.setFont(SEGOE_UI);
+        btn.setForeground(GRAY);
+        btn.setText(text);
+        btn.setAutoscrolls(true);
+        btn.setCursor(new Cursor(Cursor.HAND_CURSOR));
+
+
+    }
+
+    public void setComboxBoxProperty( JComboBox<String> comboBox,String unit){
+        comboBox.setFont(SEGOE_UI);
+        comboBox.setForeground(MAIN_COLOR);
+        if(unit.equalsIgnoreCase("molarity")){
+            comboBox.setModel(new DefaultComboBoxModel<>(
+                    new String[]{
+                            "molars",
+                            "decimolars",
+                            "centimolars",
+                            "millimolars",
+                            "micromolars",
+                            "nanomolars"
+                    }));
+            comboBox.setSelectedIndex(0);
+        }
+        else if(unit.equalsIgnoreCase("base")){
+            comboBox.setModel(new DefaultComboBoxModel<>(
+                    new String[]{
+                            "deciliters",
+                            "milliliters",
+                            "centiliters",
+                            "liters",
+                            "cubic_decimeters",
+                            "cubic_millimeters",
+                            "cubic_centimeters",
+                    }
+            ));
+            comboBox.setSelectedIndex(1);
+        }
+
+    }
+
+
     private void initComponent() {
-        labelForAcidMolarityTextfield.setFont(SEGOE_UI);
-        labelForAcidMolarityTextfield.setForeground(MAIN_COLOR);
-        labelForAcidMolarityTextfield.setText("Molarity of Acid :");
 
-        labelForAcidVolumeTextfield.setFont(SEGOE_UI);
-        labelForAcidVolumeTextfield.setForeground(MAIN_COLOR);
-        labelForAcidVolumeTextfield.setText("Volume of Acid :");
+        setFontPropertyToTextFieldLabel(labelForAcidMolarityTextfield,"Molarity of Acid :");
+        setFontPropertyToTextFieldLabel(labelForAcidVolumeTextfield,"Volume of Acid :");
+        setFontPropertyToTextFieldLabel(labelForBaseVolumeTextfield,"Volume of Base :");
 
-        labelForBaseVolumeTextfield.setFont(SEGOE_UI);
-        labelForBaseVolumeTextfield.setForeground(MAIN_COLOR);
-        labelForBaseVolumeTextfield.setText("Volume of Base :");
-
-        clearButton.setBackground(MAIN_COLOR);
-        clearButton.setFont(SEGOE_UI);
-        clearButton.setForeground(GRAY);
-        clearButton.setText("Clear");
-        clearButton.setAutoscrolls(true);
-        clearButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        setButtonProperty(clearButton,"Clear");
         clearButton.addActionListener(this::clearButtonActionPerformed);
 
-        getUnknownValueButton.setBackground(MAIN_COLOR);
-        getUnknownValueButton.setFont(SEGOE_UI);
-        getUnknownValueButton.setForeground(GRAY);
-        getUnknownValueButton.setText("Get unknown value");
-        getUnknownValueButton.setAutoscrolls(true);
-        getUnknownValueButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        setButtonProperty(getUnknownValueButton,"Get unknown value");
         getUnknownValueButton.addActionListener(this::getUnknownValueButtonActionPerformed);
 
-        acidMolarityUnitComboBox.setFont(SEGOE_UI);
-        acidMolarityUnitComboBox.setForeground(MAIN_COLOR);
-        acidMolarityUnitComboBox.setModel(new DefaultComboBoxModel<>(
-                new String[]{
-                        "molars",
-                        "decimolars",
-                        "centimolars",
-                        "millimolars",
-                        "micromolars",
-                        "nanomolars"
-                }));
-        acidMolarityUnitComboBox.setSelectedIndex(0);
+        setComboxBoxProperty(acidMolarityUnitComboBox,"molarity");
         acidMolarityUnitComboBox.addActionListener(this::acidMolarityUnitComboBoxActionPerformed);
         acidMolarityUnitComboBox.addItemListener(this::acidMolarityUnitComboBoxItemStateChanged);
 
-        baseMolarityUnitComboBox.setFont(SEGOE_UI);
-        baseMolarityUnitComboBox.setForeground(MAIN_COLOR);
-        baseMolarityUnitComboBox.setModel(new DefaultComboBoxModel<>(
-                new String[]{
-                        "molars",
-                        "decimolars",
-                        "centimolars",
-                        "millimolars",
-                        "micromolars",
-                        "nanomolars"
-                }));
-        baseMolarityUnitComboBox.setSelectedIndex(0);
+        setComboxBoxProperty(baseMolarityUnitComboBox,"molarity");
         baseMolarityUnitComboBox.addActionListener(this::baseMolarityUnitComboBoxActionPerformed);
         baseMolarityUnitComboBox.addItemListener(this::baseMolarityUnitComboBoxItemStateChanged);
 
-        baseVolumeUnitComboBox.setFont(SEGOE_UI);
-        baseVolumeUnitComboBox.setForeground(MAIN_COLOR);
-        baseVolumeUnitComboBox.setModel(new DefaultComboBoxModel<>(
-                new String[]{
-                        "deciliters",
-                        "milliliters",
-                        "centiliters",
-                        "liters",
-                        "cubic_decimeters",
-                        "cubic_millimeters",
-                        "cubic_centimeters",
-                }
-        ));
-        baseVolumeUnitComboBox.setSelectedIndex(1);
+        setComboxBoxProperty(baseVolumeUnitComboBox,"base");
         baseVolumeUnitComboBox.addActionListener(this::baseVolumeUnitComboBoxActionPerformed);
         baseVolumeUnitComboBox.addItemListener(this::baseVolumeUnitComboBoxItemStateChanged);
 
-        acidVolumeUnitComboBox.setFont(SEGOE_UI);
-        acidVolumeUnitComboBox.setForeground(MAIN_COLOR);
-        acidVolumeUnitComboBox.setModel(new DefaultComboBoxModel<>(
-                new String[]{
-                        "deciliters",
-                        "milliliters",
-                        "centiliters",
-                        "liters",
-                        "cubic_decimeters",
-                        "cubic_millimeters",
-                        "cubic_centimeters",
-                }
-        ));
-        acidVolumeUnitComboBox.setSelectedIndex(1);
+        setComboxBoxProperty(acidVolumeUnitComboBox,"base");
         acidVolumeUnitComboBox.addActionListener(this::acidVolumeUnitComboBoxActionPerformed);
         acidVolumeUnitComboBox.addItemListener(this::acidVolumeUnitComboBoxItemStateChanged);
 

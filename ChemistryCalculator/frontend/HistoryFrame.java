@@ -10,13 +10,11 @@ import java.io.PrintWriter;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-
-
 public class HistoryFrame extends JFrame {
     private static final Font SEGOE_UI = new Font("Segoe UI", 1, 14);
     private static final Color MAIN_COLOR = new Color(64, 43, 100);
     private static final Color GRAY = new Color(204, 204, 204);
-    
+
     private final JPanel mainPanel = new JPanel();
     private final JScrollPane mainScrollPane = new JScrollPane();
     private final JTextArea HistoryTextArea = new JTextArea();
