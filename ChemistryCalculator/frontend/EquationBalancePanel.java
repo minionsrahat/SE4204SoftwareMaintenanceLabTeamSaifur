@@ -5,10 +5,12 @@ import ChemistryCalculator.backend.History;
 import ChemistryCalculator.backend.InvalidAtomException;
 import ChemistryCalculator.backend.InvalidEquationException;
 
+import java.awt.event.ActionListener;
 import javax.swing.*;
 import java.awt.*;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import javax.swing.border.Border;
 
 public class EquationBalancePanel extends JPanel {
     private static final Font SEGOE_UI = new Font("Segoe UI", 1, 14);
@@ -43,82 +45,58 @@ public class EquationBalancePanel extends JPanel {
     }
 
     private void initComponent() {
-
-        labelForReactantsTextfield.setFont(SEGOE_UI);
-        labelForReactantsTextfield.setForeground(MAIN_COLOR);
-        labelForReactantsTextfield.setText("Reactants : ");
-
-
-        labelForProductsTextfield.setFont(SEGOE_UI);
-        labelForProductsTextfield.setForeground(MAIN_COLOR);
-        labelForProductsTextfield.setText("Products  :");
+        setLabel(SEGOE_UI, MAIN_COLOR, labelForReactantsTextfield, "Reactants : ");
+        setLabel(SEGOE_UI, MAIN_COLOR, labelForProductsTextfield, "Products  :");
 
         errorMessagePanel.setBackground(Color.red);
         errorMessagePanel.setVisible(false);
 
-        errorMessageLabel.setFont(SEGOE_UI);
-        errorMessageLabel.setForeground(Color.white);
+        setLabel(SEGOE_UI, Color.white, errorMessageLabel, "");
         errorMessageLabel.setHorizontalAlignment(SwingConstants.CENTER);
 
-        balanceButton.setBackground(MAIN_COLOR);
-        balanceButton.setFont(SEGOE_UI);
-        balanceButton.setForeground(GRAY);
-        balanceButton.setText("Balance");
-        balanceButton.setAutoscrolls(true);
-        balanceButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        balanceButton.addActionListener(this::balanceButtonActionPerformed);
-
-        historyButton.setBackground(MAIN_COLOR);
-        historyButton.setFont(SEGOE_UI);
-        historyButton.setForeground(GRAY);
-        historyButton.setText("History");
-        historyButton.setAutoscrolls(true);
-        historyButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        historyButton.addActionListener(this::historyButtonActionPerformed);
-
-        clearButton.setBackground(MAIN_COLOR);
-        clearButton.setFont(SEGOE_UI); // NOI18N
-        clearButton.setForeground(GRAY);
-        clearButton.setText("Clear");
-        clearButton.setAutoscrolls(true);
-        clearButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        clearButton.addActionListener(this::clearButtonActionPerformed);
+        setButton(MAIN_COLOR, SEGOE_UI, GRAY, "Balance", balanceButton, this::balanceButtonActionPerformed);
+        setButton(MAIN_COLOR, SEGOE_UI, GRAY, "History", historyButton, this::historyButtonActionPerformed);
+        setButton(MAIN_COLOR, SEGOE_UI, GRAY, "Clear", clearButton, this::clearButtonActionPerformed);
 
         ansPanel.setBackground(MAIN_COLOR_LITE);
         ansPanel.setVisible(false);
 
-        labelForBalancedEquation.setFont(SEGOE_UI); // NOI18N
-        labelForBalancedEquation.setForeground(GRAY);
-        labelForBalancedEquation.setText("Balanced Equation :");
+        setLabel(SEGOE_UI, GRAY, labelForBalancedEquation, "Balanced Equation :");
+        setLabel(SEGOE_UI, GRAY, labelForGivenEquation, "Given Equation :");
 
-        labelForGivenEquation.setFont(SEGOE_UI); // NOI18N
-        labelForGivenEquation.setForeground(GRAY);
-        labelForGivenEquation.setText("Given Equation :");
-
-        balancedEquationScrollPane.setBackground(MAIN_COLOR_LITE);
-        balancedEquationScrollPane.setBorder(null);
-        balancedEquationScrollPane.setForeground(MAIN_COLOR_LITE);
-        balancedEquationScrollPane.setAutoscrolls(true);
-
-        balancedEquationLabel.setBackground(MAIN_COLOR_LITE);
-        balancedEquationLabel.setFont(SEGOE_UI); // NOI18N
-        balancedEquationLabel.setForeground(Color.white);
-        balancedEquationLabel.setOpaque(true);
-        balancedEquationScrollPane.setViewportView(balancedEquationLabel);
-
-        givenEquationScrollPane.setBackground(MAIN_COLOR_LITE);
-        givenEquationScrollPane.setBorder(null);
-        givenEquationScrollPane.setForeground(MAIN_COLOR_LITE);
-        givenEquationScrollPane.setAutoscrolls(true);
-
-        givenEquationLabel.setBackground(MAIN_COLOR_LITE);
-        givenEquationLabel.setFont(SEGOE_UI); // NOI18N
-        givenEquationLabel.setForeground(Color.white);
-        givenEquationLabel.setOpaque(true);
-        givenEquationScrollPane.setViewportView(givenEquationLabel);
-
-
+        setScrollPane(MAIN_COLOR_LITE, null, balancedEquationScrollPane, balancedEquationLabel);
+        setScrollPane(MAIN_COLOR_LITE, null, givenEquationScrollPane, givenEquationLabel);
     }
+
+    private void setLabel(Font font, Color foreground, JLabel label, String text) {
+        label.setFont(font);
+        label.setForeground(foreground);
+        label.setText(text);
+    }
+
+    private void setButton(Color background, Font font, Color foreground, String text, JButton button, ActionListener actionListener) {
+        button.setBackground(background);
+        button.setFont(font);
+        button.setForeground(foreground);
+        button.setText(text);
+        button.setAutoscrolls(true);
+        button.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        button.addActionListener(actionListener);
+    }
+
+    private void setScrollPane(Color background, Border border, JScrollPane scrollPane, JLabel label) {
+        scrollPane.setBackground(background);
+        scrollPane.setBorder(border);
+        scrollPane.setForeground(background);
+        scrollPane.setAutoscrolls(true);
+
+        label.setBackground(background);
+        label.setFont(SEGOE_UI);
+        label.setForeground(Color.white);
+        label.setOpaque(true);
+        scrollPane.setViewportView(label);
+    }
+
 
     private void setComponentLayout() {
         //Layout for Error message panel

@@ -96,7 +96,6 @@ public class MolarMassPanel extends JPanel {
         ansTableScrollPane.setVisible(false);
 
 
-
         setButtonProperty(getMolarMassButton,"Get Molar mass");
         getMolarMassButton.addActionListener(this::molarMassButtonActionPerformed);
 
@@ -213,7 +212,6 @@ public class MolarMassPanel extends JPanel {
             } catch (InvalidAtomException e) {
                 errorMessagePanel.setVisible(true);
                 errorMessageLabel.setText(e.getMessage());
-
                 additionalText1.setVisible(false);
                 compoundAnsLabel.setVisible(false);
                 additionalText2.setVisible(false);
