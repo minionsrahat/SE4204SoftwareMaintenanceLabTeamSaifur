@@ -148,12 +148,6 @@ public class DatabaseSerializer {
         objectOutputStream.writeObject(hashMap);
 
 
-//########## printing all element from database.ser##############
-//        FileInputStream fileInputStream = new FileInputStream("atom.ser");
-//        ObjectInputStream objectinputStream = new ObjectInputStream(fileInputStream);
-//        HashMap<String, String[]> out = (HashMap<String, String[]>) objectinputStream.readObject();
-//
-//        out.forEach((k, v)-> System.out.println(k + Arrays.toString(v)));
     }
 
 }

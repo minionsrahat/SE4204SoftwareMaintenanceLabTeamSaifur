@@ -72,8 +72,7 @@ public class CompoundManager {
                 }
             }
             findAtoms(eachCompound, index, multiplier, side);
-            //System.out.println("before finding element");
-            //System.out.println(eachCompound + "  " + index + "  " + multiplier + "  " + side);
+
         }
     }
 
@@ -94,18 +93,7 @@ public class CompoundManager {
         }
     }
 
-    //populating elementList and elementMatrix. Example --
-    //for an equation =>
-    //Reactants = Ca(OH)2 + H3PO4
-    //Products = Ca3(PO4)2 + H2O
-    //elementList => {P=3, H=2, Ca=0, O=1}
-    //elementMatrix => [[1, 2, 2, 0], [0, 4, 3, 1], [-3, -8, 0, -2], [0, -1, -2, 0]]
-    //Explanation =>
-    //                      Ca,  O,  H,  P
-    //         Ca(OH)2    =  1,  2,  2,  0
-    //         H3PO4      =  0,  4,  3,  1
-    //         Ca3(PO4)2  = -3, -8,  0, -2
-    //         H2O        =  0, -1, -2,  0
+
     //NullSpace of this matrix gives the corresponding balanced Coefficient
     private void addToMatrix(String atoms, int index, int multiplier, int side) {
 

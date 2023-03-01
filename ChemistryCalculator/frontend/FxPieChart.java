@@ -17,10 +17,10 @@ public class FxPieChart extends JFrame {
     private static final int PANEL_WIDTH_INT = 730;
     private static final int PANEL_HEIGHT_INT = 460;
     private final JPanel chartTablePanel = new JPanel();
-    private final Vector<Vector<String>> percentageOfCompletion;
+    private final Vector<Vector> percentageOfCompletion;
     private final JFXPanel chartFxPanel = new JFXPanel();
 
-    public FxPieChart(Vector<Vector<String>> percentageOfCompletion) {
+    public FxPieChart(Vector<Vector> percentageOfCompletion) {
         initComponents();
         this.percentageOfCompletion = percentageOfCompletion;
     }

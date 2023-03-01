@@ -30,13 +30,7 @@ public class Compound {
         this.molarMass = sum;
 
     }
-
-    //percentage of every atom present in the compound. Based on - mass
-    //Example => H2O
-    //mass of H => (1.00794*2)
-    //mass of O => (15.9994)
-    //percentage of H in H2O => (1.00794*2)/molar mass of H2O *100
-    //percentage of O in H2O => (15.9994)/molar mass of H2O *100
+    
 
     private void calculatePercentageOfCompletion() {
         int totalElements = compoundManager.getAtomList().entrySet().size();
