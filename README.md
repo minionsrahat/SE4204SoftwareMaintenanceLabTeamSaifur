@@ -1,3 +1,31 @@
+# Software Maintenance Lab (SE 4204)
+
+This repository contains the SE4204 course materials. The project is used to perform refactoring and create SRS document from the existing project.
+Some of the documents that are created -
+1. [Software Program Comprehension Report](https://github.com/minionsrahat/SoftwareMaintenanceLab_Refactoring/blob/master/Documents/Program%20Comprehension%20Report.pdf)
+2. [Software Requirements Specification Document](https://github.com/minionsrahat/SoftwareMaintenanceLab_Refactoring/blob/master/Documents/Software%20Requirements%20Specification%20Document.pdf)
+3. [Source Code Refactoring Report](https://github.com/minionsrahat/SoftwareMaintenanceLab_Refactoring/blob/master/Documents/Source%20Code%20Refactoring%20Report.pdf)
+
+
+## Team - Rahat
+* Abdullah An-Noor (ASH1825001M)
+* Fazle Rabbi (ASH1825004M)
+* Rahat Uddin Azad (ASH1825022M)
+* Saifur Rahman (ASH1825031M)
+* Anwar Kabir Sajib (ASH1825038M)
+
+
+<hr>
+<hr>
+
+
+
+
+
+
+
+
+
 
 # Chemistry Calculator
 Its a desktop based application which  provides facility for solving  equations and problems related to Electron Combination, Molarity, Mass, Percent of Composition, Balance Reaction, molecular mass, titration setup etc
