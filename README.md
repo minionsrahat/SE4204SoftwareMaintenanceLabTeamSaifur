@@ -7,7 +7,7 @@ Some of the documents that are created -
 3. [Source Code Refactoring Report](https://github.com/minionsrahat/SoftwareMaintenanceLab_Refactoring/blob/master/Documents/Source%20Code%20Refactoring%20Report.pdf)
 
 
-## Team - Rahat
+## Team - Saifur
 * Abdullah An-Noor (ASH1825001M)
 * Fazle Rabbi (ASH1825004M)
 * Rahat Uddin Azad (ASH1825022M)
